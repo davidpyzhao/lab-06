@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-
+    implementation(files("/Users/davidzhao/Library/Android/sdk/platforms/android-35/android.jar"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

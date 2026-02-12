@@ -33,7 +33,7 @@ public class CityList {
         return list;
     }
     /**
-     * This returns a sorted list of cities
+     * This returns a boolean of if the inputted city is within the list
      * @return
      * Return a boolean of if the inputted city is within the list
      */
@@ -42,7 +42,9 @@ public class CityList {
     }
 
     /**
-     * This returns a sorted list of cities
+     * This deletes a inputted city from the list
+     * @param city
+     * This is a candidate city to remove
      * @throw an exception if city to remove not in list
      */
     public void deleteCity(City city) throws Exception {

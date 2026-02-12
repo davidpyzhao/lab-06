@@ -32,4 +32,31 @@ public class CityList {
         Collections.sort(list);
         return list;
     }
+    /**
+     * This returns a sorted list of cities
+     * @return
+     * Return a boolean of if the inputted city is within the list
+     */
+    public boolean hasCity(City city){
+        return cities.contains(city);
+    }
+
+    /**
+     * This returns a sorted list of cities
+     * @throw an exception if city to remove not in list
+     */
+    public void deleteCity(City city) throws Exception {
+        if(!cities.contains(city)){
+            throw new Exception("City to remove not in list");
+        }
+            cities.remove(city);
+    }
+
+    /**
+     * counts the number of cities in city list
+     * @return number of cities
+     */
+    public int countCities(){
+        return cities.size();
+    }
 }

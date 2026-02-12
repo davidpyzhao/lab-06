@@ -6,13 +6,13 @@ import com.example.code.City;
 import com.example.code.CityList;
 
 public class CityListTest {
+    private City mockCity() {
+        return new City("Edmonton", "Alberta");
+    }
     private CityList mockCityList() {
         CityList cityList = new CityList();
         cityList.add(mockCity());
         return cityList;
-    }
-    private City mockCity() {
-        return new City("Edmonton", "Alberta");
     }
 
     @Test
@@ -51,9 +51,10 @@ public class CityListTest {
     @Test
     public void testHasCity() {
         CityList cityList = mockCityList();
-        assertTrue(cityList.hasCity(mockCity()));
         City city = new City("Regina", "Saskatchewan");
         assertFalse(cityList.hasCity(city));
+        cityList.add(city);
+        assertTrue(cityList.hasCity(city));
     }
 
     @Test
@@ -61,6 +62,7 @@ public class CityListTest {
         CityList cityList = mockCityList();
         City city_to_delete = mockCity();
         cityList.add(city_to_delete);
+
         assertTrue(cityList.hasCity(city_to_delete));
         try {
             cityList.deleteCity(city_to_delete);
